@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .loading_animation_nani {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 200px;
+            height: 100px;
+            background-color: rgba(167, 167, 167, 0.1);
+        }
+        .loading_animation_nani>div{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #6cf;
+            margin: 0 2px;
+            animation: loading_animation_nani 1.4s infinite;
+        }
+        .loading_animation_nani .loading_stone2{
+            animation-delay: -1.2s;
+        }
+        .loading_animation_nani .loading_stone3{
+            animation-delay: -1s;
+        }
+        .loading_animation_nani .loading_stone4{
+            animation-delay: -0.8s;
+        }
+        @keyframes loading_animation_nani {
+            0%,25%,75%,100%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(-20px) rotate(360deg);
+                border-radius: 25%;
+                background-color:#faf;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading_animation_nani">
+        <div class="loading_stone1"></div>
+        <div class="loading_stone2"></div>
+        <div class="loading_stone3"></div>
+        <div class="loading_stone4"></div>
+    </div>
+</body>
+
+</html>
