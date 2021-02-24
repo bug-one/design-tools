@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mouse_click_animation_nalu{
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            opacity: 0.7;
+            animation: mouse_click_animation_nalu 2s;
+        }
+        @keyframes mouse_click_animation_nalu {
+            50%{
+                border-radius: 50%;
+            }
+            100%{
+                opacity: 0;
+                transform: translateY(-100px) scale(2) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.onclick = function (e) {
+            var colorR = Math.ceil(Math.random() * 255)
+            var colorG = Math.ceil(Math.random() * 255)
+            var colorB = Math.ceil(Math.random() * 255)
+            var mouse_click_animation_nalu = document.createElement('div')
+            mouse_click_animation_nalu.classList.add('mouse_click_animation_nalu')
+            document.body.appendChild(mouse_click_animation_nalu)
+            mouse_click_animation_nalu.style.left = e.pageX - mouse_click_animation_nalu.offsetWidth / 2 + 'px'
+            mouse_click_animation_nalu.style.top = e.pageY - mouse_click_animation_nalu.offsetHeight / 2 + 'px'
+            mouse_click_animation_nalu.style.backgroundColor = `rgb(${colorR},${colorG},${colorB})`
+            setTimeout(() => {
+                mouse_click_animation_nalu.remove()
+            }, 1900);
+        }
+    </script>
+</body>
+</html>
